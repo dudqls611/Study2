@@ -19,14 +19,76 @@
   </head>
   <body>
 
+
+
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
-        <span class="navbar-brand">Navbar</span>
+        <span class="navbar-brand">JSShop</span>
+        <span class="badge bg-dark">Dark 🔄</span>
         <button class="navbar-toggler" type="button">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
     </nav> 
+
+
+    <p>태조 이성계가 태어난 년도는?</p>
+    <input type="text" id="answer">
+    <button id="send-answer">제출</button>
+    <script>
+        var count = 0;
+
+      document.querySelector('#send-answer').addEventListener('click', function() {
+        count += 1;
+        var 유저답안 = document.querySelector('#answer').value;
+        if (유저답안 == '1335') {
+          alert('성공')
+        } else if (count >= 3 && 유저답안 != '1335') {
+          alert('멍청아')
+        }
+      })
+    </script>
+
+
+    <script>
+
+      var 이름 = 'kim';
+      이름 = 'park';
+
+      
+      
+
+
+
+
+
+
+
+
+
+      var count = 1;
+      document.querySelector('.badge').addEventListener('click', function() {
+      // $('.badge').on('click', function() {
+      
+        count += 1;
+        // if (count % 2 == 1) {
+        //   $('.badge').html('Light');
+        // } else {
+        //   $('.badge').html('Dark');
+        // }
+
+        if (count % 2 == 1) {
+          document.querySelector('.badge').innerHTML = 'Light 🔄';
+          document.querySelector('body').classList.add('white');
+          // document.querySelector('body').classList.remove('dark');
+        } else {
+          document.querySelector('.badge').innerHTML = 'Dark 🔄';
+          document.querySelector('body').classList.add('dark');
+          document.querySelector('body').classList.remove('white');
+        }
+      });
+
+    </script>
 
     <ul class="list-group" id="test1">
       <li class="list-group-item">An item</li>
@@ -55,6 +117,8 @@
     </div> 
 
     <script>
+
+      
       
       document.querySelector('form').addEventListener('submit', function() {
         if (document.getElementById('email').value == '') {
@@ -85,7 +149,41 @@
         document.querySelectorAll('.list-group')[0].classList.toggle('show');
       })
 
+      function 삼육구게임(a) {
+        if ((a % 3 == 0) && (a != 0)) {
+          console.log('박수');
+        } else {
+          console.log('아님');
+        }
+      }
+      삼육구게임(0);
+
     </script>
+
+
+
+
+    <div class="alert alert-danger">
+      <span>5</span>초 이내 구매시 사은품 증정!
+    </div>
+    <script>
+      setTimeout(function() {
+
+      }, 1000)
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
