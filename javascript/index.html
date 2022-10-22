@@ -121,11 +121,19 @@
       
       
       document.querySelector('form').addEventListener('submit', function() {
+        var 입력한값 = document.getElementById('email').value;
         if (document.getElementById('email').value == '') {
           alert('아이디 입력안함');
           e.preventDefault();
         }
+
+        if (/\S+@\S+\.\S+/.test(입력한값)) {
+          alert('이메일 형식 아님');
+        }
       });
+
+
+
     </script>
     <div class="main-bg">
       <h4>Shirts on Sale</h4>
