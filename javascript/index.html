@@ -32,6 +32,8 @@
     </nav> 
 
 
+
+<!-- 
     <p>태조 이성계가 태어난 년도는?</p>
     <input type="text" id="answer">
     <button id="send-answer">제출</button>
@@ -48,23 +50,12 @@
         }
       })
     </script>
+ -->
+
+
 
 
     <script>
-
-      var 이름 = 'kim';
-      이름 = 'park';
-
-      
-      
-
-
-
-
-
-
-
-
 
       var count = 1;
       document.querySelector('.badge').addEventListener('click', function() {
@@ -144,6 +135,22 @@
 
 
 
+
+    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur fuga error vero laudantium incidunt! Eligendi, recusandae doloremque quam alias ducimus porro corporis aperiam earum consequatur accusamus voluptate voluptates labore! Dignissimos.</div>
+    <div style="height: 1000px"></div>
+    <script>
+      // div의 스크롤바 내린 양 + 눈에 보이는 div 높이 == div의 실제 높이 
+      document.querySelector('.lorem').addEventListener('scroll', function() {
+        var 스크롤양 = document.querySelector('.lorem').scrollTop; // 스크롤 양
+        var 실제높이 = document.querySelector('.lorem').scrollHeight; // 스크롤 실제 높이
+        var 높이 = document.querySelector('.lorem').clientHeight; // 눈에 보이는 높이
+        console.log(스크롤양, 실제높이, 높이);
+      })
+    </script>
+
+
+
+
     
     <div style="overflow: hidden">
       <div class="slide-container">
@@ -187,8 +194,6 @@
           지금사진 -= 1;
         }
       })
-
-
 
 
       document.querySelector('.slide-1').addEventListener('click', function() {
@@ -258,10 +263,6 @@
 
       }, 1000)
     </script> -->
-
-
-
-
 
 
 
