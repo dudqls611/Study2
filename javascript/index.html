@@ -106,6 +106,20 @@
         </form> 
       </div>
     </div> 
+    <script>
+      document.querySelector('.black-bg').addEventListener('click', function(e) {
+        // e.target; 
+        // e.currentTarget;
+        // this;
+        // e.preventDefault();
+        // e.stopPropagation();
+        if (e.target == document.querySelector('.black-bg')) {
+          document.querySelector('.black-bg').classList.remove('show-modal');
+        }
+      })
+    </script>
+
+
 
     <script>
 
