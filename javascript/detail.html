@@ -82,6 +82,7 @@
   </select>
 </form>
 <script>
+  var pants = [28, 30, 32, 34];
   $('.form-select').eq(0).on('input', function () {
     var value = $('.form-select').eq(0).val();
     if (value == '셔츠') {
@@ -89,9 +90,12 @@
     } else if (value == '바지') {
       $('.form-select').eq(1).removeClass('form-hide');
       $('.form-select').eq(1).html('');
-      var 추가템플릿 = `<option>28</option>
-        <option>30</option>`;
-      $('.form-select').eq(1).append(추가템플릿);
+      pants.forEach(function() {
+        $
+      })
+      // var 추가템플릿 = `<option>28</option>
+      //   <option>30</option>`;
+      // $('.form-select').eq(1).append(추가템플릿);
     }
   })
 </script>
