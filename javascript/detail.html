@@ -82,22 +82,27 @@
   </select>
 </form>
 <script>
-  var pants = [28, 30, 32, 34];
+  var pants = [28,30,322];
+  var shirts = [95, 100 ,105];
+
   $('.form-select').eq(0).on('input', function () {
     var value = $('.form-select').eq(0).val();
     if (value == '셔츠') {
       $('.form-select').eq(1).removeClass('form-hide');
+      shirts.forEach(function(shirtsdata) {
+        $('.form-select').eq(1).append(`<option>${shirtsdata}</option>`);
+      })
     } else if (value == '바지') {
       $('.form-select').eq(1).removeClass('form-hide');
       $('.form-select').eq(1).html('');
-      pants.forEach(function() {
-        $
+      
+      pants.forEach(function(data) {
+        $('.form-select').eq(1).append(`<option>${data}</option>`);
       })
-      // var 추가템플릿 = `<option>28</option>
-      //   <option>30</option>`;
-      // $('.form-select').eq(1).append(추가템플릿);
     }
   })
+
+  
 </script>
 
 
