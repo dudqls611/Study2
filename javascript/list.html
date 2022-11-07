@@ -28,21 +28,96 @@
         
     </div>
   </div>
-
-
+  <div class="container my-3">
+    <button class="btn btn-danger" id="price">가격순정렬</button>
+  </div>
+  <div class="container my-3">
+    <button class="btn btn-danger" id="sort1">다나가순정렬</button>
+  </div>
+  <div class="container my-3">
+    <button class="btn btn-danger" id="filter">6만원이하</button>
+  </div>
       <script>
         var products = [
           { id : 0, price : 70000, title : 'Blossom Dress' },
           { id : 1, price : 50000, title : 'Springfield Shirt' },
           { id : 2, price : 60000, title : 'Black Monastery' }
         ];
+
+
+
+        $('#filter').click(function() {
+          var newProduct = products.filter(function(a) {
+            return a.price <= 60000
+          })
+          $('.row').html('');
+          newProduct.forEach((a, i)=>{
+          var 템플릿 =
+          `<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100">
+            <h5>${newProduct[i].title}</h5>
+            <p>가격 : ${newProduct[i].price}</p>
+          </div>`;
+            $('.row').append(템플릿)
+          });
+
+        })
+
+
+        $('#price').click(function() {
+          products.sort(function(a, b) {
+            return a.price - b.price
+          })
+          $('.row').html('');
+          products.forEach((a, i)=>{
+          var 템플릿 =
+          `<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100">
+            <h5>${products[i].title}</h5>
+            <p>가격 : ${products[i].price}</p>
+          </div>`;
+            $('.row').append(템플릿)
+          });
+        })
+
+        
+        $('#sort1').click(function() {
+          products.sort(function(a, b) {
+            if (a.title < b.title) {
+              return 1
+            } else {
+              return -1
+            }
+         });
+         $('.row').html('');
+          products.forEach((a, i)=>{
+          var 템플릿 =
+          `<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100">
+            <h5>${products[i].title}</h5>
+            <p>가격 : ${products[i].price}</p>
+          </div>`;
+            $('.row').append(템플릿)
+          });
+        })
+        
      
+
+        // var 어레이 = [7,3,5,2,40];
+        // 어레이.sort(function(a, b) {
+        //   return a - b   // 오름차순 정렬하는 방법
+        // });
+        // console.log(어레이);
+
+
+
       products.forEach((a, i)=>{
       var 템플릿 =
       `<div class="col-sm-4">
         <img src="https://via.placeholder.com/600" class="w-100">
         <h5>${products[i].title}</h5>
         <p>가격 : ${products[i].price}</p>
+        <button>구매</button>
       </div>`;
       $('.row').append(템플릿)
       });
